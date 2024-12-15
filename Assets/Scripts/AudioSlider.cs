@@ -9,7 +9,7 @@ public class AudioSettings : MonoBehaviour
     
     private float _multiplier = 20f;
 
-    private void Awake()
+    private void OnEnable()
     {
         _slider.onValueChanged.AddListener(ChangeVolume);
     }

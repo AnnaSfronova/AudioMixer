@@ -6,7 +6,7 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioSource _audio;
     [SerializeField] private Button _button;
 
-    private void Awake()
+    private void OnEnable()
     {
         _button.onClick.AddListener(Play);
     }

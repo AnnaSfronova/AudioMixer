@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class ButtonAnimator : MonoBehaviour
 {
-    private const string IsHighlighted = "isHighlighted";
+    private const string IsHighlighted = nameof(IsHighlighted);
 
     private Animator _animator;
 

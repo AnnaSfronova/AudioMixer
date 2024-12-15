@@ -10,7 +10,7 @@ public class AudioMuter : MonoBehaviour
     private float _minVolume = -80f;
     private float _maxVolume = 0f;
 
-    private void Awake()
+    private void OnEnable()
     {
         _toggle.onValueChanged.AddListener(Mute);
     }
