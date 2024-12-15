@@ -15,11 +15,13 @@ public class AudioMuter : MonoBehaviour
         _toggle.onValueChanged.AddListener(Mute);
     }
 
-    private void Mute(bool _)
+    private void OnDisable()
     {
-        if (_toggle.isOn)
-            _mixer.audioMixer.SetFloat(_mixer.name, _maxVolume);
-        else
-            _mixer.audioMixer.SetFloat(_mixer.name, _minVolume);
+        _toggle.onValueChanged.RemoveListener(Mute);
+    }
+
+    private void Mute(bool value)
+    {
+        _mixer.audioMixer.SetFloat(_mixer.name, _toggle.isOn ? _maxVolume : _minVolume);
     }
 }

@@ -11,6 +11,11 @@ public class AudioPlayer : MonoBehaviour
         _button.onClick.AddListener(Play);
     }
 
+    private void OnDisable()
+    {
+        _button.onClick.RemoveListener(Play);
+    }
+
     private void Play()
     {
         _audio.Play();

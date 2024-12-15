@@ -14,6 +14,11 @@ public class AudioSettings : MonoBehaviour
         _slider.onValueChanged.AddListener(ChangeVolume);
     }
 
+    private void OnDisable()
+    {
+        _slider.onValueChanged.RemoveListener(ChangeVolume);
+    }
+
     private void ChangeVolume(float volume)
     {
         _mixer.audioMixer.SetFloat(_mixer.name, Mathf.Log10(volume) * _multiplier);
